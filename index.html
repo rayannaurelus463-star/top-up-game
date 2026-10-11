@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOP UP GAME</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#0b0b16;color:white}
+header{background:#15152a;padding:20px;text-align:center;border-bottom:2px solid #8b5cf6}
+header h1{color:#a78bfa;margin:0}
+header p{color:#ccc}
+.hero{text-align:center;padding:35px 15px}
+.hero h2{font-size:30px}
+.hero span{color:#a78bfa}
+.games{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:15px;padding:15px;max-width:900px;margin:auto}
+.card{background:#19192c;border:1px solid #343451;border-radius:15px;padding:20px 10px;text-align:center}
+.card h3{margin:10px 0}
+.card p{color:#ccc;font-size:14px}
+button{background:#8b5cf6;color:white;border:0;border-radius:8px;padding:12px 18px;font-weight:bold;cursor:pointer}
+button:hover{background:#7041d8}
+.order{max-width:500px;margin:30px auto;padding:20px;background:#19192c;border-radius:15px}
+input,select{width:100%;padding:12px;margin:8px 0 15px;border-radius:7px;border:1px solid #444;background:#0b0b16;color:white}
+label{font-size:14px}
+footer{text-align:center;padding:25px;color:#aaa}
+</style>
+</head>
+<body>
+<header>
+<h1>🎮 TOP UP GAME</h1>
+<p>Recharge tes jeux préférés !</p>
+</header><section class="hero">
+<h2>Recharge tes jeux <span>facilement</span></h2>
+<p>Choisis ton jeu et prépare ta commande.</p>
+</section><section class="games">
+<div class="card">
+<div style="font-size:45px">💎</div>
+<h3>Free Fire</h3>
+<p>Diamonds</p>
+<button onclick="chooseGame('Free Fire')">Choisir</button>
+</div>
+<div class="card">
+<div style="font-size:45px">🎯</div>
+<h3>PUBG Mobile</h3>
+<p>UC</p>
+<button onclick="chooseGame('PUBG Mobile')">Choisir</button>
+</div>
+<div class="card">
+<div style="font-size:45px">⚔️</div>
+<h3>Mobile Legends</h3>
+<p>Diamonds</p>
+<button onclick="chooseGame('Mobile Legends')">Choisir</button>
+</div>
+<div class="card">
+<div style="font-size:45px">🚀</div>
+<h3>Call of Duty Mobile</h3>
+<p>CP</p>
+<button onclick="chooseGame('Call of Duty Mobile')">Choisir</button>
+</div>
+</section><section class="order" id="commande">
+<h2>🛒 Passer une commande</h2>
+<form onsubmit="sendOrder(event)">
+<label>Jeu choisi</label>
+<select id="game" required>
+<option value="">Choisir un jeu</option>
+<option>Free Fire</option>
+<option>PUBG Mobile</option>
+<option>Mobile Legends</option>
+<option>Call of Duty Mobile</option>
+</select><label>ID du joueur</label>
+<input id="player" required placeholder="Entre ton ID de joueur">
+
+<label>Quantité souhaitée</label>
+<input id="quantity" required placeholder="Exemple : 100 Diamonds">
+
+<label>Ton contact</label>
+<input id="contact" required placeholder="WhatsApp ou téléphone">
+
+<label>Méthode de paiement</label>
+<select id="payment" required>
+
+<option value="">Choisir un moyen de paiement</option>
+<option>MonCash</option>
+<option>NatCash</option>
+<option>Carte bancaire (à configurer)</option>
+</select><button type="submit">Préparer ma commande</button>
+
+</form>
+<p id="result"></p>
+</section><footer>© 2026 TOP UP GAME — Tous droits réservés.</footer><script>
+function chooseGame(name){
+ document.getElementById('game').value=name;
+ document.getElementById('commande').scrollIntoView({behavior:'smooth'});
+}
+function sendOrder(event){
+ event.preventDefault();
+ const order={
+ jeu:document.getElementById('game').value,
+ joueur:document.getElementById('player').value,
+ quantite:document.getElementById('quantity').value,
+ contact:document.getElementById('contact').value,
+ paiement:document.getElementById('payment').value
+ };
+ document.getElementById('result').textContent=
+ 'Commande préparée pour '+order.jeu+
+ '. Cette démo ne transmet pas encore ta commande au vendeur. Contacte le vendeur pour confirmer le paiement.';
+}
+</script></body>
+</html>
