@@ -550,3 +550,261 @@ if (!configured) {
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EM TOP UP SHOP - Recharges & Cartes</title>
+  <style>
+    :root {
+      --primary-color: #0f172a; /* Ble fonse / Nwa modèn */
+      --accent-color: #2563eb;  /* Ble vif */
+      --success-color: #16a34a; /* Vèt WhatsApp / Siksè */
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-color: #334155;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      color: var(--primary-color);
+      font-size: 28px;
+      margin-bottom: 5px;
+      letter-spacing: 0.5px;
+    }
+
+    .subtitle {
+      color: #64748b;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      width: 100%;
+      max-width: 850px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      text-align: left;
+      border-top: 4px solid var(--accent-color);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card h2 {
+      color: var(--primary-color);
+      font-size: 20px;
+      margin-top: 0;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 6px;
+      font-weight: 600;
+      font-size: 13px;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 15px;
+      background-color: #f8fafc;
+      color: #1e293b;
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      background-color: #ffffff;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: var(--success-color);
+      color: white;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+      transition: background-color 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      background-color: #15803d;
+      box-shadow: 0 6px 15px rgba(22, 163, 74, 0.3);
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>EM TOP UP SHOP</h1>
+    <p class="subtitle">Sèvis rapid ak sekirize pou recharges jwèt ak kat prépayé</p>
+  </header>
+
+  <div class="container">
+    
+    <!-- SECTION 1 : RECHARGES JEUX -->
+    <div class="card">
+      <h2>🎮 Recharges Jwèt</h2>
+      
+      <label for="game-select">Chwazi jwèt la :</label>
+      <select id="game-select" onchange="changerPacks()">
+        <option value="Free Fire">Free Fire</option>
+        <option value="eFootball">eFootball (eCoins)</option>
+      </select>
+
+      <label for="player-id">ID Jwè a (Player ID) :</label>
+      <input type="text" id="player-id" placeholder="Eg: 123456789" required>
+
+      <label for="game-package">Chwazi Pakèt la :</label>
+      <select id="game-package">
+        <!-- Ranpli otomatikman an JavaScript -->
+      </select>
+
+      <label for="game-payment">Mwayèn Peman :</label>
+      <select id="game-payment">
+        <option value="Moncash">Moncash</option>
+        <option value="Natcash">Natcash</option>
+      </select>
+
+      <button onclick="commanderJeu()">Kòmande sou WhatsApp</button>
+    </div>
+
+    <!-- SECTION 2 : KART AK SÈVIS -->
+    <div class="card">
+      <h2>💳 Kat & Sèvis Vityèl</h2>
+      
+      <label for="card-select">Kalite sèvis :</label>
+      <select id="card-select">
+        <option value="Carte Mastercard">Recharge Mastercard Vityèl</option>
+        <option value="Apple Pay / Gift Card">Kat Kado Apple (iTunes)</option>
+      </select>
+
+      <label for="card-amount">Montan an dola ($ USD) :</label>
+      <select id="card-amount">
+        <option value="5$ USD">5$ USD</option>
+        <option value="10$ USD">10$ USD</option>
+        <option value="25$ USD">25$ USD</option>
+        <option value="50$ USD">50$ USD</option>
+      </select>
+
+      <label for="card-payment">Mwayèn Peman :</label>
+      <select id="card-payment">
+        <option value="Moncash">Moncash</option>
+        <option value="Natcash">Natcash</option>
+      </select>
+
+      <button onclick="commanderCarte()">Kòmande sou WhatsApp</button>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2026 EM TOP UP SHOP. Tout dwa rezève.
+  </footer>
+
+  <script>
+    const packs = {
+      "Free Fire": ["100 Diamants", "530 Diamants", "1080 Diamants", "2200 Diamants"],
+      "eFootball": ["130 Pièces eFootball", "550 Pièces eFootball", "1040 Pièces eFootball", "2130 Pièces eFootball"]
+    };
+
+    function changerPacks() {
+      const jeu = document.getElementById('game-select').value;
+      const selectPack = document.getElementById('game-package');
+      selectPack.innerHTML = "";
+      
+      packs[jeu].forEach(pack => {
+        const option = document.createElement('option');
+        option.value = pack;
+        option.textContent = pack;
+        selectPack.appendChild(option);
+      });
+    }
+
+    changerPacks();
+
+    // Ranplase ak nimewo WhatsApp ou a
+    const monNumeroWhatsApp = "50900000000";
+
+    function commanderJeu() {
+      const jeu = document.getElementById('game-select').value;
+      const id = document.getElementById('player-id').value;
+      const pack = document.getElementById('game-package').value;
+      const paiement = document.getElementById('game-payment').value;
+
+      if (!id) {
+        alert('Tanpri antre ID jwè ou a (Player ID).');
+        return;
+      }
+
+      const msg = `Bonjou EM TOP UP SHOP, m ta renmen kòmande :\n- Jwèt : ${jeu}\n- Pakèt : ${pack}\n- Player ID : ${id}\n- Peman : ${paiement}`;
+      window.open(`https://wa.me/${monNumeroWhatsApp}?text=${encodeURIComponent(msg)}`);
+    }
+
+    function commanderCarte() {
+      const service = document.getElementById('card-select').value;
+      const montant = document.getElementById('card-amount').value;
+      const paiement = document.getElementById('card-payment').value;
+
+      const msg = `Bonjou EM TOP UP SHOP, m ta renmen kòmande :\n- Sèvis : ${service}\n- Montan : ${montant}\n- Peman : ${paiement}`;
+      window.open(`https://wa.me/${monNumeroWhatsApp}?text=${encodeURIComponent(msg)}`);
+    }
+  </script>
+
+</body>
+</html>
