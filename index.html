@@ -808,3 +808,99 @@ if (!configured) {
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EM TOP UP SHOP - Recharge Merou</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f8fafc;
+      color: #334155;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .card {
+      background: white;
+      width: 100%;
+      max-width: 400px;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      border-top: 5px solid #8b5cf6;
+      box-sizing: border-box;
+    }
+    h1 { color: #0f172a; text-align: center; margin-bottom: 5px; }
+    p.subtitle { text-align: center; color: #64748b; font-size: 14px; margin-bottom: 20px; }
+    label { display: block; margin: 12px 0 5px; font-weight: bold; font-size: 13px; color: #475569; }
+    input, select { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; margin-bottom: 10px; }
+    button {
+      width: 100%; padding: 14px; background-color: #8b5cf6; color: white;
+      font-weight: bold; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 15px;
+    }
+    button:hover { background-color: #7c3aed; }
+  </style>
+</head>
+<body>
+
+  <h1>EM TOP UP SHOP</h1>
+  <p class="subtitle">Sèvis Recharge Merou rapid ak sekirize</p>
+
+  <div class="card">
+    <h2>Recharge Merou</h2>
+    
+    <label for="merou-phone">Numéro Téléphone WhatsApp :</label>
+    <input type="tel" id="merou-phone" placeholder="Ex: +509 3123 4567" required>
+
+    <label for="merou-account">Compte / ID Merou :</label>
+    <input type="text" id="merou-account" placeholder="Entrez votre ID Merou" required>
+
+    <label for="merou-amount">Montant ($ USD) :</label>
+    <select id="merou-amount">
+      <option value="5$ USD">5$ USD</option>
+      <option value="10$ USD">10$ USD</option>
+      <option value="20$ USD">20$ USD</option>
+      <option value="50$ USD">50$ USD</option>
+      <option value="100$ USD">100$ USD</option>
+    </select>
+
+    <label for="merou-payment">Moyen de paiement :</label>
+    <select id="merou-payment">
+      <option value="Moncash">Moncash</option>
+      <option value="Natcash">Natcash</option>
+    </select>
+
+    <button onclick="commanderMerou()">Commander Merou via WhatsApp</button>
+  </div>
+
+  <script>
+    // Remplacez par votre numéro WhatsApp
+    const monNumeroWhatsApp = "50900000000";
+
+    function commanderMerou() {
+      const phone = document.getElementById('merou-phone').value;
+      const account = document.getElementById('merou-account').value;
+      const amount = document.getElementById('merou-amount').value;
+      const payment = document.getElementById('merou-payment').value;
+
+      if (!phone) {
+        alert('Veuillez entrer votre numéro WhatsApp.');
+        return;
+      }
+      if (!account) {
+        alert('Veuillez entrer votre compte Merou.');
+        return;
+      }
+
+      const msg = `Bonjour EM TOP UP SHOP, je souhaite effectuer une recharge Merou :\n- Compte Merou : ${account}\n- Montant : ${amount}\n- Mon WhatsApp : ${phone}\n- Mode de paiement : ${payment}`;
+      window.open(`https://wa.me/${monNumeroWhatsApp}?text=${encodeURIComponent(msg)}`);
+    }
+  </script>
+
+</body>
+</html>
