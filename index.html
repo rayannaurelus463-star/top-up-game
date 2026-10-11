@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TOP UP GAME</title>
+<title>TOP UP CARD & GAME </title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -115,7 +115,7 @@ footer {
 <body>
 
 <header>
-  <h1>🎮 TOP UP GAME</h1>
+  <h1>🎮 TOP UP CARD & GAME </h1>
   <p>Recharge tes jeux préférés !</p>
 </header>
 
@@ -186,7 +186,7 @@ footer {
 
     <form id="loginForm">
 
-      <label>Email</label>
+      <label>email</label>
       <input
         id="email"
         type="email"
@@ -202,7 +202,7 @@ footer {
         autocomplete="current-password"
       >
 
-      <button type="submit">Se connecter</button>
+      <button type="submit">S'inscrire </button>
 
     </form>
 
@@ -226,7 +226,7 @@ footer {
 </main>
 
 <footer>
-  © 2026 TOP UP GAME
+  © 2026 TOP UP GAME & CARD
 </footer>
 
 <script>
@@ -555,7 +555,7 @@ if (!configured) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EM TOP UP SHOP - Recharges & Cartes</title>
+  <title>EM TOP UP GAME & CARD - Recharges & Cartes</title>
   <style>
     :root {
       --primary-color: #0f172a; /* Ble fonse / Nwa modèn */
@@ -691,7 +691,7 @@ if (!configured) {
 <body>
 
   <header>
-    <h1>EM TOP UP SHOP</h1>
+    <h1>EM TOP UP CARD & GAME </h1>
     <p class="subtitle">Sèvis rapid ak sekirize pou recharges jwèt ak kat prépayé</p>
   </header>
 
@@ -699,7 +699,7 @@ if (!configured) {
     
     <!-- SECTION 1 : RECHARGES JEUX -->
     <div class="card">
-      <h2>🎮 Recharges Jwèt</h2>
+      <h2>🎮 Recharges Jeux </h2>
       
       <label for="game-select">Chwazi jwèt la :</label>
       <select id="game-select" onchange="changerPacks()">
@@ -707,7 +707,7 @@ if (!configured) {
         <option value="eFootball">eFootball (eCoins)</option>
       </select>
 
-      <label for="player-id">ID Jwè a (Player ID) :</label>
+      <label for="player-id">ID (Player ID) :</label>
       <input type="text" id="player-id" placeholder="Eg: 123456789" required>
 
       <label for="game-package">Chwazi Pakèt la :</label>
@@ -724,9 +724,9 @@ if (!configured) {
       <button onclick="commanderJeu()">Kòmande sou WhatsApp</button>
     </div>
 
-    <!-- SECTION 2 : KART AK SÈVIS -->
+    <!-- SECTION 2 : card & service >
     <div class="card">
-      <h2>💳 Kat & Sèvis Vityèl</h2>
+      <h2>💳 CARD & SERVICE VIRTUELLE</h2>
       
       <label for="card-select">Kalite sèvis :</label>
       <select id="card-select">
@@ -779,8 +779,8 @@ if (!configured) {
     changerPacks();
 
     // Ranplase ak nimewo WhatsApp ou a
-    const monNumeroWhatsApp = "50900000000";
-
+    const monNumeroWhatsApp = "50940616775";
+const monNumeroWhatsApp = "50936219911";
     function commanderJeu() {
       const jeu = document.getElementById('game-select').value;
       const id = document.getElementById('player-id').value;
@@ -792,7 +792,7 @@ if (!configured) {
         return;
       }
 
-      const msg = `Bonjou EM TOP UP SHOP, m ta renmen kòmande :\n- Jwèt : ${jeu}\n- Pakèt : ${pack}\n- Player ID : ${id}\n- Peman : ${paiement}`;
+      const msg = `Bonjou EM TOP UP CARD & GAME, m ta renmen kòmande :\n- Jwèt : ${jeu}\n- Pakèt : ${pack}\n- Player ID : ${id}\n- Peman : ${paiement}`;
       window.open(`https://wa.me/${monNumeroWhatsApp}?text=${encodeURIComponent(msg)}`);
     }
 
@@ -848,20 +848,20 @@ if (!configured) {
 </head>
 <body>
 
-  <h1>EM TOP UP SHOP</h1>
+  <h1>EM TOP UP GAME & CARD </h1>
   <p class="subtitle">Sèvis Recharge Merou rapid ak sekirize</p>
 
   <div class="card">
     <h2>Recharge Merou</h2>
     
-    <label for="merou-phone">Numéro Téléphone WhatsApp :</label>
+    <label for="meru-phone">Numéro Téléphone WhatsApp :</label>
     <input type="tel" id="merou-phone" placeholder="Ex: +509 3123 4567" required>
 
-    <label for="merou-account">Compte / ID Merou :</label>
+    <label for="meru-account">Compte / ID Merou :</label>
     <input type="text" id="merou-account" placeholder="Entrez votre ID Merou" required>
 
-    <label for="merou-amount">Montant ($ USD) :</label>
-    <select id="merou-amount">
+    <label for="meru-amount">Montant ($ USD) :</label>
+    <select imail="meru-amount">
       <option value="5$ USD">5$ USD</option>
       <option value="10$ USD">10$ USD</option>
       <option value="20$ USD">20$ USD</option>
@@ -869,8 +869,8 @@ if (!configured) {
       <option value="100$ USD">100$ USD</option>
     </select>
 
-    <label for="merou-payment">Moyen de paiement :</label>
-    <select id="merou-payment">
+    <label for="meru-payment">Moyen de paiement :</label>
+    <select id="meru-payment">
       <option value="Moncash">Moncash</option>
       <option value="Natcash">Natcash</option>
     </select>
@@ -880,9 +880,9 @@ if (!configured) {
 
   <script>
     // Remplacez par votre numéro WhatsApp
-    const monNumeroWhatsApp = "50900000000";
-
-    function commanderMerou() {
+    const monNumeroWhatsApp = "50940616775";
+const monNumeroWhatsApp = "5093621991
+    function commanderMeru() {
       const phone = document.getElementById('merou-phone').value;
       const account = document.getElementById('merou-account').value;
       const amount = document.getElementById('merou-amount').value;
@@ -893,11 +893,11 @@ if (!configured) {
         return;
       }
       if (!account) {
-        alert('Veuillez entrer votre compte Merou.');
+        alert('Veuillez entrer votre compte Meru.');
         return;
       }
 
-      const msg = `Bonjour EM TOP UP SHOP, je souhaite effectuer une recharge Merou :\n- Compte Merou : ${account}\n- Montant : ${amount}\n- Mon WhatsApp : ${phone}\n- Mode de paiement : ${payment}`;
+      const msg = `Bonjour EM TOP UP GAME & CARD, je souhaite effectuer une recharge Merou :\n- Compte Merou : ${account}\n- Montant : ${amount}\n- Mon WhatsApp : ${phone}\n- Mode de paiement : ${payment}`;
       window.open(`https://wa.me/${monNumeroWhatsApp}?text=${encodeURIComponent(msg)}`);
     }
   </script>
